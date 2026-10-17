@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { CLIENTS } from '../../data/site'
 import Icon from '../ui/Icon'
+import Reveal from '../ui/Reveal'
 
 // Logos live in src/clients (logo-00.png …). Vite picks them up automatically.
 const ALL = Object.entries(import.meta.glob('../../clients/*.png', { eager: true, import: 'default' }))
@@ -30,7 +31,7 @@ export default function ClientsGrid() {
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-navy sm:text-[34px]">Powering operations for leading businesses</h2>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6" onMouseEnter={() => setHold(true)} onMouseLeave={() => setHold(false)}>
+        <Reveal className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6" onMouseEnter={() => setHold(true)} onMouseLeave={() => setHold(false)}>
           <div className="flex flex-wrap items-center gap-3 border-b border-slate-200 pb-4">
             <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium uppercase tracking-wide text-emerald-700"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />Live network</span>
             <span className="text-sm text-slate-600">A growing community of smarter operations</span>
@@ -55,7 +56,7 @@ export default function ClientsGrid() {
               </div>
             )}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

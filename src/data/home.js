@@ -1,13 +1,13 @@
 export const STATS = [
-  { icon: 'calendar', value: '2020', label: 'Year founded' },
-  { icon: 'erp', value: '10+', label: 'Years in manufacturing' },
-  { icon: 'code', value: '100%', label: 'Custom built' },
-  { icon: 'shield', value: '100%', label: 'Refund, in writing' }
+  { icon: 'calendar', tone: 'blue', value: '2020', label: 'Year founded' },
+  { icon: 'erp', tone: 'orange', value: '10+', label: 'Years in manufacturing' },
+  { icon: 'code', tone: 'violet', value: '100%', label: 'Custom built' },
+  { icon: 'shield', tone: 'emerald', value: '100%', label: 'Refund, in writing' }
 ]
 export const PAINS = [
-  ['Complicated', 'Operations spread across people, sheets and memory.'],
-  ['Challenging', 'Problems generic vendors keep failing to solve.'],
-  ['Scattered', 'Data in ten places. Decisions on gut feel.']
+  ['Complicated', 'Operations spread across people, sheets and memory.', 'users', 'rose'],
+  ['Challenging', 'Problems generic vendors keep failing to solve.', 'target', 'amber'],
+  ['Scattered', 'Data in ten places. Decisions on gut feel.', 'sheet', 'blue']
 ]
 export const CASE = {
   client: 'CT/PT manufacturer · Dehradun',
