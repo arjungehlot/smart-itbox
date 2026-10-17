@@ -1,0 +1,20 @@
+import { byGroup, GROUPS } from '../data/pages'
+import PageHero from '../components/ui/PageHero'
+import PageCard from '../components/ui/PageCard'
+import CtaBand from '../components/home/CtaBand'
+
+/** /solutions and /products */
+export default function Listing({ group }) {
+  const g = GROUPS[group]
+  return (
+    <>
+      <PageHero eyebrow={g.label} title={g.title} text={g.text} />
+      <section className="bg-slate-50 px-5 py-14">
+        <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {byGroup(group).map(p => <PageCard key={p.slug} page={p} />)}
+        </div>
+      </section>
+      <CtaBand />
+    </>
+  )
+}

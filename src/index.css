@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0b1f4b;
+  --color-navy-2: #14316e;
+  --color-brand: #f5b400;
+  --color-brand-2: #ffc933;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --animate-fadein: fadein .5s ease;
+  @keyframes fadein { from { opacity: 0; transform: translateY(6px); } }
+}
