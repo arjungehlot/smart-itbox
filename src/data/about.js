@@ -23,5 +23,5 @@ export const PRINCIPLES = [
 export const TEAM = [
   ['Shalender Singh', 'Founder & CEO', 'Company direction, business vision and practical automation solutions.'],
   ['Md Kashif Ahmad', 'Chief Technical Officer', 'Operational oversight and process optimization.'],
-  ['Satyam Singh', 'Tech Lead', 'Technical architecture, software development and delivery.']
+  ['Arjun Gehlot', 'Software Developer', 'Software development and delivery.']
 ]

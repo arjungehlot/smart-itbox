@@ -41,7 +41,7 @@ export const PAGES = [
     text: 'Assign, follow up and score tasks — even by voice note on WhatsApp.',
     points: ['Create tasks by message or voice', 'AI assigns to the right person', 'Auto status updates', 'Scoreboard of every member'] },
 
-  { slug: 'teamflow', group: 'products', icon: 'users', title: 'TeamFlow', tag: 'flow360.in', video: 'fFfZq0IbhjY', image: '/slides/slide-2.svg', link: 'https://flow360.in',
+  { slug: 'teamflow', group: 'products', icon: 'users', title: 'TeamFlow - Deligation System', tag: 'flow360.in', video: 'fFfZq0IbhjY', image: '/slides/slide-2.svg', link: 'https://flow360.in',
     line: 'AI task management for your whole team.',
     text: 'Assign tasks by text or voice; track deadlines, overdue reminders and team scorecards.',
     points: ['Task assignment by text or voice', 'WhatsApp & email notifications', 'Live dashboard', 'Team performance scorecards'] },

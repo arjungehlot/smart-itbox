@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import Home from './pages/Home'
 import Listing from './pages/Listing'
@@ -6,6 +6,7 @@ import PageDetail from './pages/PageDetail'
 import CaseStudy from './pages/CaseStudy'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Videos from './pages/Videos'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -17,6 +18,8 @@ export default function App() {
         <Route path="solutions/:slug" element={<PageDetail group="solutions" />} />
         <Route path="products" element={<Listing group="products" />} />
         <Route path="products/:slug" element={<PageDetail group="products" />} />
+        <Route path="library" element={<Navigate to="/library/videos" replace />} />
+        <Route path="library/videos" element={<Videos />} />
         <Route path="case-study" element={<CaseStudy />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />

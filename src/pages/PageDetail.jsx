@@ -25,9 +25,11 @@ export default function PageDetail({ group }) {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-slate-50 px-5 pb-16 pt-24">
-        <div className="pointer-events-none absolute -right-28 top-10 h-96 w-96 rounded-full bg-navy/[.04]" />
-        <div className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-brand/10" />
+      <section className="relative overflow-hidden bg-blue-50/70 px-5 pb-20 pt-24">
+        <div className="pointer-events-none absolute -right-32 -top-24 h-[28rem] w-[28rem] rounded-full bg-blue-100/70" />
+        <div className="pointer-events-none absolute -bottom-28 -left-20 h-72 w-72 rounded-full bg-violet-100/60" />
+        <div className="pointer-events-none absolute right-1/3 top-20 h-3 w-3 animate-float rounded-full bg-blue-400/60" />
+        <div className="pointer-events-none absolute bottom-16 left-1/2 h-2.5 w-2.5 animate-float rounded-full bg-orange-400/70" />
         <div className="relative mx-auto max-w-6xl">
           <nav className="mb-8 flex items-center gap-2 text-sm text-slate-500" aria-label="Breadcrumb">
             <Link to="/" className="hover:text-navy">Home</Link><span>/</span>
@@ -45,8 +47,15 @@ export default function PageDetail({ group }) {
                   : page.tag && <span className="rounded-full bg-white px-3 py-1 text-xs text-slate-600 ring-1 ring-slate-200">{page.tag}</span>}
               </div>
               <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.12] tracking-tight text-navy sm:text-[44px]">{page.title}</h1>
-              <p className="mt-4 border-l-2 border-brand pl-4 font-display text-lg text-navy-2">{page.line}</p>
-              <p className="mt-4 leading-relaxed text-slate-600">{page.text}</p>
+              <p className="mt-4 font-display text-lg text-blue-700 sm:text-xl">{page.line}</p>
+              <p className="mt-3 leading-relaxed text-slate-600">{page.text}</p>
+              <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
+                {page.points.map((t, i) => (
+                  <li key={t} className="flex items-center gap-2.5 rounded-xl border border-white bg-white/80 px-3 py-2 text-sm text-slate-700 shadow-sm">
+                    <span className={`grid h-6 w-6 shrink-0 place-items-center rounded-lg border-b-2 text-white ${['bg-blue-600 border-blue-800','bg-emerald-500 border-emerald-700','bg-violet-500 border-violet-700','bg-orange-500 border-orange-700'][i % 4]}`}><Icon name="check" size={13} /></span>{t}
+                  </li>
+                ))}
+              </ul>
               <div className="mt-8 flex flex-wrap gap-3">
                 {page.link && <Button href={page.link} target="_blank" rel="noreferrer" variant="dark" size="lg">Visit {page.link.replace(/^https?:\/\/(www\.)?/, '')} <Icon name="ext" size={15} /></Button>}
                 {page.soon
@@ -58,8 +67,8 @@ export default function PageDetail({ group }) {
             {/* RIGHT — video / image in a framed window */}
             <Reveal from="right" delay={120} key={page.slug + 'v'}>
               <div className="relative">
-                <span className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl bg-brand" aria-hidden="true" />
-                <div className="relative overflow-hidden rounded-2xl border border-navy bg-navy shadow-xl">
+                <span className="absolute -inset-3 rounded-[28px] bg-white/70 ring-1 ring-blue-100" aria-hidden="true" />
+                <div className="relative overflow-hidden rounded-2xl bg-navy shadow-2xl shadow-navy/25 ring-1 ring-navy/10">
                   <div className="flex items-center gap-1.5 px-4 py-2.5">
                     <i className="h-2.5 w-2.5 rounded-full bg-white/30" /><i className="h-2.5 w-2.5 rounded-full bg-white/30" /><i className="h-2.5 w-2.5 rounded-full bg-white/30" />
                     <span className="ml-3 truncate text-[11px] text-blue-200">smartitbox.in/{group}/{page.slug}</span>
@@ -70,6 +79,9 @@ export default function PageDetail({ group }) {
                 </div>
                 <span className="absolute -left-4 top-14 hidden animate-float items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-xs font-medium text-navy shadow-lg sm:flex">
                   <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" /><span className="relative h-2 w-2 rounded-full bg-emerald-500" /></span>{page.video ? 'Live demo' : 'Preview'}
+                </span>
+                <span className="absolute -bottom-6 right-6 hidden animate-float items-center gap-2.5 rounded-2xl border border-slate-100 bg-white p-2 pr-4 text-xs font-medium text-navy shadow-xl [animation-delay:1.2s] sm:flex">
+                  <IconTile name={page.icon} tone={page.tone} size="sm" />{page.tag || g.single}
                 </span>
               </div>
             </Reveal>
