@@ -43,7 +43,7 @@ export const PAGES = [
     text: 'Connect your WhatsApp, manage contacts, create campaigns, automate conversations and track every message from one powerful dashboard.',
     points: [],
     tiles: [['Manage', 'Contacts'], ['Create', 'Campaigns'], ['Automate', 'Conversations'], ['Track', 'Every message']] },
-  { slug: 'visiting-card', tone: 'pink', group: 'products', icon: 'camera', title: 'Visiting Card AI', tag: 'Coming soon', soon: true, video: null, image: '/slides/slide-3.svg',
+  { slug: 'visiting-card', tone: 'pink', group: 'products', icon: 'camera', title: 'Card Plus', tag: 'Coming soon', soon: true, video: null, image: '/slides/slide-3.svg',
     line: 'Click a card. Lead captured. Follow-up sent.',
     text: 'WhatsApp + chatbot + AI + OCR. Send a card photo; it is read, stored and followed up automatically.',
     points: ['Photo on WhatsApp → data captured', 'WhatsApp / email sent with your profile', 'Send a company name → get contact instantly', 'No typing, no errors'] }

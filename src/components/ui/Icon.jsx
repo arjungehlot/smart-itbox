@@ -18,6 +18,7 @@ const PATHS = {
   x: 'M6 6l12 12M18 6L6 18',
   menu: 'M4 7h16M4 12h16M4 17h16',
   play: 'M8 5v14l11-7z',
+  trophy: 'M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4zM7 6H4v1a3 3 0 003 3M17 6h3v1a3 3 0 01-3 3',
   ext: 'M14 4h6v6M20 4l-9 9M18 14v6H4V6h6',
   calendar: 'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4',
   target: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 12h.01',

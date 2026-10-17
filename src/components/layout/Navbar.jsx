@@ -41,8 +41,9 @@ function Dropdown({ group, to }) {
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [sub, setSub] = useState('')
+  const [closed, setClosed] = useState(false) // hides desktop dropdowns after a click until the pointer leaves
   const { pathname } = useLocation()
-  useEffect(() => { setOpen(false) }, [pathname])
+  useEffect(() => { setOpen(false); setClosed(true); document.activeElement?.blur?.() }, [pathname])
 
   const linkCls = ({ isActive }) => `relative flex items-center gap-1 px-3.5 py-2 text-sm transition-colors duration-200 hover:text-navy group-hover:text-navy after:absolute after:inset-x-3.5 after:-bottom-[13px] after:h-0.5 after:origin-center after:bg-brand after:transition-transform after:duration-300 after:ease-out group-hover:after:scale-x-100 ${isActive ? 'font-medium text-navy after:scale-x-100' : 'text-slate-600 after:scale-x-0'}`
 
@@ -53,11 +54,11 @@ export default function Navbar() {
 
         <nav className="ml-auto hidden items-center gap-0.5 lg:flex">
           {NAV.map(({ label, to, group }) => (
-            <div key={to} className="group relative">
+            <div key={to} className="group relative" onMouseLeave={() => setClosed(false)}>
               <NavLink to={to} end={to === '/'} className={linkCls}>
                 {label}{group && <Icon name="down" size={14} className="transition-transform duration-200 group-hover:rotate-180" />}
               </NavLink>
-              {group && <Dropdown group={group} to={to} />}
+              {group && !closed && <Dropdown group={group} to={to} />}
             </div>
           ))}
         </nav>

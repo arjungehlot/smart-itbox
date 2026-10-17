@@ -34,4 +34,4 @@ export const FAQS = [
   ['How long does a project take?', 'Most projects are delivered within 0–6 weeks, followed by training and support.'],
   ['Do you offer a free demo?', 'Yes — book one from the contact page.']
 ]
-export const INTERESTS = ['Google Sheets', 'WhatsApp Chatbot', 'WA Flow', 'Visiting Card AI', 'MERN System', 'CRM / ERP', 'Others']
+export const INTERESTS = ['Google Sheets', 'WhatsApp Chatbot', 'WA Flow', 'Card plus', 'MERN System', 'CRM / ERP', 'Others']

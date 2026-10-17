@@ -7,6 +7,7 @@ import CaseStudy from './pages/CaseStudy'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Videos from './pages/Videos'
+import Awards from './pages/Awards'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="products/:slug" element={<PageDetail group="products" />} />
         <Route path="library" element={<Navigate to="/library/videos" replace />} />
         <Route path="library/videos" element={<Videos />} />
+        <Route path="library/awards" element={<Awards />} />
         <Route path="case-study" element={<CaseStudy />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />

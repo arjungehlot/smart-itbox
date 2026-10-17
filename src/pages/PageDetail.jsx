@@ -59,7 +59,7 @@ export default function PageDetail({ group }) {
               <div className="mt-8 flex flex-wrap gap-3">
                 {page.link && <Button href={page.link} target="_blank" rel="noreferrer" variant="dark" size="lg">Visit {page.link.replace(/^https?:\/\/(www\.)?/, '')} <Icon name="ext" size={15} /></Button>}
                 {page.soon
-                  ? <Button href={waLink('Hello! Please notify me when Visiting Card AI launches.')} target="_blank" rel="noreferrer" size="lg">Notify me on launch</Button>
+                  ? <Button href={waLink('Hello! Please notify me when Card Plus launches.')} target="_blank" rel="noreferrer" size="lg">Notify me on launch</Button>
                   : <Button to="/contact" variant={page.link ? 'outline' : 'primary'} size="lg">Take a Free Demo <Icon name="arrow" size={16} /></Button>}
               </div>
             </Reveal>
