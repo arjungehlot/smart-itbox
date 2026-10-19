@@ -8,6 +8,7 @@ import SectionHead from '../components/ui/SectionHead'
 import PageCard from '../components/ui/PageCard'
 import CtaBand from '../components/home/CtaBand'
 import IconTile, { TONES } from '../components/ui/IconTile'
+import { SHOW_VIDEOS, pageImage } from '../data/media'
 import NotFound from './NotFound'
 
 const TILE_ICONS = ['users', 'mail', 'chat', 'eye']
@@ -59,7 +60,7 @@ export default function PageDetail({ group }) {
               <div className="mt-8 flex flex-wrap gap-3">
                 {page.link && <Button href={page.link} target="_blank" rel="noreferrer" variant="dark" size="lg">Visit {page.link.replace(/^https?:\/\/(www\.)?/, '')} <Icon name="ext" size={15} /></Button>}
                 {page.soon
-                  ? <Button href={waLink('Hello! Please notify me when Card Plus launches.')} target="_blank" rel="noreferrer" size="lg">Notify me on launch</Button>
+                  ? <Button href={waLink('Hello! Please notify me when Visiting Card AI launches.')} target="_blank" rel="noreferrer" size="lg">Notify me on launch</Button>
                   : <Button to="/contact" variant={page.link ? 'outline' : 'primary'} size="lg">Take a Free Demo <Icon name="arrow" size={16} /></Button>}
               </div>
             </Reveal>
@@ -73,12 +74,12 @@ export default function PageDetail({ group }) {
                     <i className="h-2.5 w-2.5 rounded-full bg-white/30" /><i className="h-2.5 w-2.5 rounded-full bg-white/30" /><i className="h-2.5 w-2.5 rounded-full bg-white/30" />
                     <span className="ml-3 truncate text-[11px] text-blue-200">smartitbox.in/{group}/{page.slug}</span>
                   </div>
-                  {page.video
+                  {SHOW_VIDEOS && page.video
                     ? <iframe src={embed(page.video)} title={page.title} allow="autoplay; encrypted-media; fullscreen" allowFullScreen className="aspect-video w-full bg-black" />
-                    : <img src={page.image} alt={page.title} className="aspect-video w-full object-cover" />}
+                    : <img src={pageImage(page)} alt={page.title} className="aspect-video w-full object-cover" />}
                 </div>
                 <span className="absolute -left-4 top-14 hidden animate-float items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-xs font-medium text-navy shadow-lg sm:flex">
-                  <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" /><span className="relative h-2 w-2 rounded-full bg-emerald-500" /></span>{page.video ? 'Live demo' : 'Preview'}
+                  <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" /><span className="relative h-2 w-2 rounded-full bg-emerald-500" /></span>{SHOW_VIDEOS && page.video ? 'Live demo' : 'Preview'}
                 </span>
                 <span className="absolute -bottom-6 right-6 hidden animate-float items-center gap-2.5 rounded-2xl border border-slate-100 bg-white p-2 pr-4 text-xs font-medium text-navy shadow-xl [animation-delay:1.2s] sm:flex">
                   <IconTile name={page.icon} tone={page.tone} size="sm" />{page.tag || g.single}
