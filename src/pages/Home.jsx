@@ -1,7 +1,6 @@
 import Carousel from '../components/home/Carousel'
 import Intro from '../components/home/Intro'
-import ClientsGrid from '../components/home/ClientsGrid'
-import Challenges from '../components/home/Challenges'
+import ClientLogos from '../components/home/ClientLogos'
 import FeaturedPages from '../components/home/FeaturedPages'
 import CaseStudyBlock from '../components/home/CaseStudyBlock'
 import Vision from '../components/home/Vision'
@@ -15,8 +14,7 @@ export default function Home() {
     <>
       <Carousel />
       <Intro />
-      <ClientsGrid />
-      <Challenges />
+      <ClientLogos />
       <FeaturedPages group="solutions" bg="bg-white" />
       <FeaturedPages group="products" bg="bg-slate-50" />
       <CaseStudyBlock />

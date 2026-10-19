@@ -7,7 +7,10 @@ import Reveal from '../ui/Reveal'
 const ALL = Object.entries(import.meta.glob('../../clients/*.png', { eager: true, import: 'default' }))
   .sort(([a], [b]) => a.localeCompare(b)).map(([, src]) => src)
 
-export default function ClientsGrid() {
+// Shown in “Showing 1–20 of … brands”. Change here when the number grows.
+const TOTAL_LABEL = '400+'
+
+export default function ClientLogos() {
   const logos = useMemo(() => ALL.slice(0, CLIENTS.max), [])
   const pages = Math.max(1, Math.ceil(logos.length / CLIENTS.perPage))
   const [page, setPage] = useState(0)
@@ -47,7 +50,7 @@ export default function ClientsGrid() {
           </div>
 
           <div className="flex items-center justify-between border-t border-slate-200 pt-4">
-            <p className="text-sm text-slate-500">Showing <b className="font-medium text-navy">{start + 1}–{start + shown.length}</b> of {ALL.length > CLIENTS.max ? `${CLIENTS.max}+` : `${logos.length}`} brands</p>
+            <p className="text-sm text-slate-500">Showing <b className="font-medium text-navy">{start + 1}–{start + shown.length}</b> of {TOTAL_LABEL} brands</p>
             {pages > 1 && (
               <div className="flex items-center gap-2">
                 <button aria-label="Previous logos" onClick={() => setPage((page - 1 + pages) % pages)} className="grid h-8 w-8 place-items-center rounded-full border border-slate-200 text-slate-600 hover:border-navy hover:text-navy"><Icon name="left" size={16} /></button>
