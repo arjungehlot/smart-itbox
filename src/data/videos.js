@@ -3,5 +3,6 @@ export const VIDEOS = ['S-ebtnwzeto', 'fFfZq0IbhjY', 'iEX5Qmp_FGM', 'FrcMcpt-U40
 
 // Library menu (navbar dropdown).
 export const LIBRARY = [
-  { slug: 'videos', title: 'Videos', line: 'Product demos & walkthroughs', icon: 'play', to: '/library/videos' }
+  { slug: 'videos', title: 'Videos', line: 'Product demos & walkthroughs', icon: 'play', to: '/library/videos' },
+  { slug: 'awards', title: 'Awards', line: 'Recognition we’re proud of', icon: 'trophy', to: '/library/awards' }
 ]
